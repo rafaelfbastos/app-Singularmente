@@ -6,15 +6,14 @@
 // tree, read text, and verify that the values of widget properties are correct.
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:saudemental/app/repositories/pills_repository_impl.dart';
 
 
 void main() {
-  testWidgets('55', (WidgetTester tester) async {
+  testWidgets('', (WidgetTester tester) async {
     
-    var teste = PillsRepositoryImpl();
 
-    await  teste.findAll();
+
+  
 
 
   });

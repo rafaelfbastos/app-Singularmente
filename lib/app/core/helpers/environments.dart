@@ -1,6 +1,7 @@
 class Environments {
   Environments._();
 
+  static String get url => "http://singularmente.ddns.net:1350";
   static String backgroudPath(int id) => 'assets/lotties/backgroud$id.json';
   static String lottiePath(String file) => 'assets/lotties/$file.json';
   static String distance(double? distance) {

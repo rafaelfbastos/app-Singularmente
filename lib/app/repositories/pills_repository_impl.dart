@@ -1,3 +1,4 @@
+import 'package:saudemental/app/core/helpers/environments.dart';
 import 'package:saudemental/app/models/pills_model.dart';
 import 'package:saudemental/app/repositories/pills_repository.dart';
 import 'package:dio/dio.dart';
@@ -12,7 +13,7 @@ class PillsRepositoryImpl implements PillsRepository {
   @override
   Future<PillsModel> find(int id) async {
     final response =
-        await _dio.get("http://saudementalapi.ddns.net:1337/api/pills/$id");
+        await _dio.get("${Environments.url}/api/pills/$id");
     final data = response.data as Map<String, dynamic>;
 
     return PillsModel.fromMap(data);
@@ -21,7 +22,7 @@ class PillsRepositoryImpl implements PillsRepository {
   @override
   Future<List<PillsModel>> findAll() async {
     final response =
-        await _dio.get("http://saudementalapi.ddns.net:1337/api/pills/");
+        await _dio.get("${Environments.url}/api/pills/");
     final data = response.data as Map<String, dynamic>;
     final datalist = data["pills"] as List;
 
@@ -31,7 +32,7 @@ class PillsRepositoryImpl implements PillsRepository {
   @override
   Future<int> count() async {
     final response =
-        await _dio.get("http://saudementalapi.ddns.net:1337/api/pills/");
+        await _dio.get("${Environments.url}/api/pills/");
     final data = response.data as Map<String, dynamic>;
     return data["count"] as int;
   }

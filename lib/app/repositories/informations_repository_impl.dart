@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:saudemental/app/core/helpers/environments.dart';
 import 'package:saudemental/app/models/informations_model.dart';
 import 'package:saudemental/app/repositories/informations_repository.dart';
 
@@ -12,7 +13,7 @@ class InformationsRepositoryImpl implements InformationsRepository {
   @override
   Future<List<InformationsModel>> findAll() async {
     final response =
-        await _dio.get("http://saudementalapi.ddns.net:1337/api/informations/");
+        await _dio.get("${Environments.url}/api/informations/");
 
     final datalist = response.data as List;
 

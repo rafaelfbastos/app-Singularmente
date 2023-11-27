@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
+import 'package:markdown/markdown.dart' as mk;
 import 'package:saudemental/app/models/informations_model.dart';
 
 class InfoPage extends StatelessWidget {
@@ -29,9 +30,29 @@ class InfoPage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.network('http://saudementalapi.ddns.net:1337/${_info.img}'),
-
-                HtmlWidget(_info.text),
+                (_info.img != null)
+                    ? Image.network('${_info.img}')
+                    : const SizedBox(
+                        height: 10,
+                      ),
+                const SizedBox(
+                  height: 30,
+                ),
+                HtmlWidget(
+                  mk.markdownToHtml(_info.text),
+                  customStylesBuilder: (element) {
+                    if (element.localName == 'p') {
+                      return {
+                        'font-size': '16px',
+                        'margin-top': '5px',
+                        'text-align': 'justify',
+                      };
+                    }
+                    return {
+                      'text-align': 'justify',
+                    };
+                  },
+                ),
               ],
             ),
           )),
