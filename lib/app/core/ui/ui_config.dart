@@ -6,9 +6,9 @@ class UiConfig {
 
   static ThemeData get theme => ThemeData(
         textTheme: GoogleFonts.quicksandTextTheme(),
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xff00DDB3)),
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xff87EBE1)),
         bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-            backgroundColor: Color.fromARGB(255, 22, 93, 80),
+            backgroundColor: Color(0xff006a64),
             selectedItemColor: Colors.white,
             unselectedItemColor: Color.fromARGB(255, 136, 136, 136),
             selectedLabelStyle: TextStyle(fontWeight: FontWeight.bold),

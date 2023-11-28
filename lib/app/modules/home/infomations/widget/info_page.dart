@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 import 'package:markdown/markdown.dart' as mk;
+import 'package:saudemental/app/core/helpers/environments.dart';
 import 'package:saudemental/app/models/informations_model.dart';
 
 class InfoPage extends StatelessWidget {
@@ -25,13 +26,13 @@ class InfoPage extends StatelessWidget {
         title: Text(_info.title),
       ),
       body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
           child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 (_info.img != null)
-                    ? Image.network('${_info.img}')
+                    ? Image.network('${Environments.url}${_info.img}')
                     : const SizedBox(
                         height: 10,
                       ),
@@ -43,7 +44,7 @@ class InfoPage extends StatelessWidget {
                   customStylesBuilder: (element) {
                     if (element.localName == 'p') {
                       return {
-                        'font-size': '16px',
+                        'font-size': '18px',
                         'margin-top': '5px',
                         'text-align': 'justify',
                       };

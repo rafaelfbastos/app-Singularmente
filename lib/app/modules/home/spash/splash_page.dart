@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:lottie/lottie.dart';
 import 'package:saudemental/app/core/store/app_store.dart';
+import 'package:saudemental/app/core/ui/theme_extension.dart';
 
 class SplashPage extends StatefulWidget {
   final AppStore _appStore;
@@ -33,9 +33,10 @@ class _SpashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SizedBox(
+      body: Container(
               height: double.infinity,
-              child: Center(child: Lottie.asset('assets/lotties/splash.json', fit: BoxFit.fill)),
+              decoration: BoxDecoration(color: context.seedColor,
+              image: const DecorationImage(image: AssetImage("assets/img/logosingularmente.png"))),
             ),
     );
   }

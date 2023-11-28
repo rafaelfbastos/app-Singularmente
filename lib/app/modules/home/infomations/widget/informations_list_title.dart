@@ -1,6 +1,7 @@
 import 'package:banner_listtile/banner_listtile.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:saudemental/app/core/ui/theme_extension.dart';
 import 'package:saudemental/app/models/informations_model.dart';
 
 class InformationsListTitle extends StatelessWidget {
@@ -17,18 +18,18 @@ class InformationsListTitle extends StatelessWidget {
       imageContainerShapeZigzagIndex: 3,
       imageContainer: Lottie.asset('assets/lotties/info.json'),
       elevation: 5,
-      backgroundColor: const Color(0xff00DDB3),
+      backgroundColor: context.seedColor,
       title: Text(
         _information.title,
         style: const TextStyle(
-          color: Colors.white,
+          color: Colors.black,
           fontSize: 20,
           fontWeight: FontWeight.bold,
           shadows: [
             Shadow(
               offset: Offset(2.0, 2.0),
               blurRadius: 3.0,
-              color: Colors.black54,
+              color: Colors.black45,
             ),
           ],
         ),
